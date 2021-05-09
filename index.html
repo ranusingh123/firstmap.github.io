@@ -7,7 +7,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 50%;
       }
 
       /* Optional: Makes the sample page fill the window. */
@@ -19,15 +19,18 @@
       }
     </style>
     <script>
+      // var myLatlng = new google.maps.LatLng(18.5204,73.8567);
+
       let map;
 
       function initMap() {
+        var myLatlngsiwan = new google.maps.LatLng(26.2243,84.3600);
         map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 26.2243, lng: 84.3600 },
+          center: myLatlngsiwan,
           zoom: 10,
         });
         var marker = new google.maps.Marker({
-            position: center,
+            position: myLatlngsiwan,
             map: map,
             title: 'Name Of Business',
             icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png'
@@ -36,7 +39,7 @@
     </script>
   </head>
   <body>
-    <div id="map">Ranu</div>
+    <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
